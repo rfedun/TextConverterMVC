@@ -16,9 +16,9 @@ namespace TextConverter.Tests
             var inputText3 = "   text";
 
             //Act
-            var word1 = new Word(inputText1);
-            var word2 = new Word(inputText2);
-            var word3 = new Word(inputText3);
+            var word1 = Word.ConvertTextToWord(inputText1);
+            var word2 = Word.ConvertTextToWord(inputText2);
+            var word3 = Word.ConvertTextToWord(inputText3);
 
             //Assert
             Assert.AreEqual("text", word1.Text);
@@ -35,28 +35,14 @@ namespace TextConverter.Tests
             var inputText3 = "\"text";
 
             //Act
-            var word1 = new Word(inputText1);
-            var word2 = new Word(inputText2);
-            var word3 = new Word(inputText3);
+            var word1 = Word.ConvertTextToWord(inputText1);
+            var word2 = Word.ConvertTextToWord(inputText2);
+            var word3 = Word.ConvertTextToWord(inputText3);
 
             //Assert
             Assert.AreEqual("text", word1.Text);
             Assert.AreEqual("text", word2.Text);
             Assert.AreEqual("text", word3.Text);
         }
-
-        [TestMethod]
-        public void CheckGetXML()
-        {
-            //Arrange
-            var word = new Word("wordText");
-
-            //Act
-            var wordXML = word.ConvertToXML();
-
-            //Assert
-            Assert.AreEqual("<word>wordText</word>", wordXML);
-        }
-
     }
 }

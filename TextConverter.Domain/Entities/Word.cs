@@ -5,35 +5,31 @@ using System.Web;
 
 namespace TextConverter.Domain.Entities
 {
-    public class Word
+    public class Word 
     {
-        private string _text = string.Empty;
-        private string _xmlTag = "word";
+        private string _text = string.Empty;        
 
         public string Text { get { return _text; } }
 
-        public Word(string text)
+        private Word(string text)
         {
-            ConvertTextToWord(text);
-        }
+            _text = text;
+        }        
 
-        public string ConvertToXML()
-        {
-            return $"<{_xmlTag}>{_text}</{_xmlTag}>";
-        }
-
-        private void ConvertTextToWord(string text)
+        public static Word ConvertTextToWord(string text)
         {
             if (string.IsNullOrEmpty(text))
+                return null;
+
+            var startIndex = text.IndexOf(text.FirstOrDefault(c => char.IsLetterOrDigit(c)));
+            if (startIndex < 0)
             {
-                _text = string.Empty;
-                return;
+                return null;
             }
 
-            var startIndex = text.IndexOf(text.First(c => char.IsLetterOrDigit(c)));
             var result = text.Substring(startIndex);
             var endIndex = result.LastIndexOf(result.Last(c => char.IsLetterOrDigit(c)));
-            _text = result.Substring(0, endIndex + 1);
+            return new Word(result.Substring(0, endIndex + 1));
         }
     }
 }

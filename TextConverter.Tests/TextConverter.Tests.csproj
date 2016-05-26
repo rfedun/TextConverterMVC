@@ -52,7 +52,6 @@
   <ItemGroup>
     <Compile Include="WordTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ConverterTests.cs" />
     <Compile Include="TextModelTests.cs" />
     <Compile Include="SentenceTests.cs" />
   </ItemGroup>

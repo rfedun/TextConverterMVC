@@ -1,0 +1,64 @@
+﻿.center {
+    margin: auto;
+    width: 60%;
+    padding:10px;
+    min-width:500px;
+}
+
+.caption {
+    font-size: 28px;   
+}
+
+.label {
+    font-size: large;
+    vertical-align:middle;
+}
+
+textarea {
+    width: 100%;
+    resize: none;  
+    padding: 5px;  
+    border: 2px solid gray;
+}
+
+.input-text-control{
+    width: 100%;
+    margin: 5px 10px 5px 0px;
+}
+
+.submit-button-area {
+    margin: 5px 10px 10px 0;
+}
+
+.text-formats-list{
+    width:100px;
+    height:30px;
+    font-family: 'Times New Roman', Times, serif ;
+    font-size:20px;
+    vertical-align:middle;
+}
+
+input[type=submit] {
+    height:30px;
+    width:100px;
+    font-family: 'Times New Roman', Times, serif ;
+    font-size:20px;
+    vertical-align:middle;
+    margin: 5px 5px;
+}
+
+.result-block{
+    border: 2px solid gray;
+    width: 100%;    
+    padding: 5px;
+    min-height: 200px;
+    background-color: rgb(233, 255, 255);
+}
+
+.result-block pre{
+    white-space:pre-wrap;
+}
+
+.result-text-area{
+    height: 100%;
+}

@@ -52,3 +52,5 @@ c:\users\administrator\documents\visual studio 2015\Projects\TextConverter\TextC
 c:\users\administrator\documents\visual studio 2015\Projects\TextConverter\TextConverter\obj\Debug\TextConverter.csprojResolveAssemblyReference.cache
 c:\users\administrator\documents\visual studio 2015\Projects\TextConverter\TextConverter\obj\Debug\TextConverter.dll
 c:\users\administrator\documents\visual studio 2015\Projects\TextConverter\TextConverter\obj\Debug\TextConverter.pdb
+C:\Users\Administrator\documents\visual studio 2015\Projects\TextConverter\TextConverter\bin\TextConverter.Domain.dll
+C:\Users\Administrator\documents\visual studio 2015\Projects\TextConverter\TextConverter\bin\TextConverter.Domain.pdb

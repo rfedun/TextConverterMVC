@@ -8,50 +8,38 @@ namespace TextConverter.Domain.Entities
 {
     public class Sentence
     {
-        private char[] _wordSeparatorsList = new char[] { ' ', ',', '(', ')', ':', '"', '{', '}'};
-        private string _sentenceTag = "sentence";
+        private static char[] _wordSeparatorsList = new char[] { ' ', ',', '(', ')', ':', '"', '{', '}'};
+        
         private List<Word> _wordList;
 
         public List<Word> WordList { get { return _wordList; } }
 
-        public Sentence(string sentenceText)
+        private Sentence()
         {
-            _wordList = new List<Word>();
-            ConvertTextToWords(sentenceText);
+            _wordList = new List<Word>();            
         }
 
-        private void ConvertTextToWords(string sentenceText)
+        public static Sentence ConvertTextToSentence(string text)
         {
-            if (string.IsNullOrEmpty(sentenceText))
-                return;
+            if (string.IsNullOrEmpty(text))
+                return null;
 
-            var wordTextList = sentenceText.Split(_wordSeparatorsList, StringSplitOptions.RemoveEmptyEntries);
+            var wordTextList = text.Split(_wordSeparatorsList, StringSplitOptions.RemoveEmptyEntries);
+            var sentence = new Sentence();
             for (int i = 0; i < wordTextList.Length; i++)
             {
-                WordList.Add(new Word(wordTextList[i]));
+                var word = Word.ConvertTextToWord(wordTextList[i]);
+                if (word != null)
+                {
+                    sentence.WordList.Add(word);
+                }                
             }
-        }
-
-        public string ConvertToXML()
-        {
-            var sb = new StringBuilder();
-            sb.AppendLine($"<{_sentenceTag}>");
-            foreach (var word in _wordList.OrderBy(word => word.Text))
+            if (sentence.WordList.Count == 0)
             {
-                sb.AppendLine(word.ConvertToXML());
+                return null;
             }
-            sb.Append($"</{_sentenceTag}>");
-            return sb.ToString();
-        }
 
-        public string ConvertToCSV()
-        {
-            var sb = new StringBuilder();
-            foreach (var word in _wordList.OrderBy(word => word.Text))
-            {
-                sb.Append(word.Text + ", ");
-            }
-            return sb.Remove(sb.Length-2, 2).ToString();                
+            return sentence;
         }
     }
 }
