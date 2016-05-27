@@ -9,11 +9,11 @@ namespace TextConverter.Domain.Entities
 {
     public class CSVConverter : ITextConverter
     {
-        private TextModel _textModel;
+        private ITextModel _textModel;
         private string _sentenceName = "Sentence";
         private string _wordName = "Word";
 
-        public CSVConverter(TextModel textModel)
+        public CSVConverter(ITextModel textModel)
         {
             _textModel = textModel;
         }

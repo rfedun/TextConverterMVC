@@ -9,12 +9,12 @@ namespace TextConverter.Domain.Entities
 {
     public class XMLConverter : ITextConverter
     {
-        private TextModel _textModel;
+        private ITextModel _textModel;
         private string _textTag = "text";
         private string _sentenceTag = "sentence";
         private string _wordTag = "word";
 
-        public XMLConverter(TextModel textModel)
+        public XMLConverter(ITextModel textModel)
         {
             _textModel = textModel;
         }

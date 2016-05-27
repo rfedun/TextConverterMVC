@@ -11,6 +11,9 @@
     <meta name="viewport" content="width=device-width" />
     <title>Text Converter</title>
     <link rel="stylesheet" type="text/css" href="~/Content/Site.css"/>
+    <script src="~/scripts/jquery-2.2.3.js"></script>
+    <script src="~/scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/scripts/Home/Index.js"></script>
 </head>
 <body>
     <div class="center">
@@ -23,10 +26,11 @@
                 <span class="label">Choose format to convert:</span>              
                 @Html.EnumDropDownListFor(text => text.TextFormat, new { @class = "text-formats-list" })
                 <input type="submit" name="convert_btn" value="Convert..." />
+                <span class="autoconverting-block"><input type="checkbox" id="autoconverting" value="false" />Auto converting</span>
             </div>
         }
         <div class="result-block">            
-            <pre>@Model.ConvertedText</pre>
+            <pre id="converted_text">@Model.ConvertedText</pre>
         </div>
     </div>
 </body>

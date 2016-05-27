@@ -19,22 +19,7 @@ namespace TextConverter.Controllers
         [HttpPost]
         public ViewResult Index(TextForConverting text)
         {
-            var textModel = TextModel.ConvertTextToModel(text.InputText);
-            if (textModel != null)
-            {
-                switch (text.TextFormat)
-                {
-                    case TextForConverting.TextFormats.XML:
-                        text.ConvertedText = TextConverterManager.GetTextConverter(ConverterTypes.TextToXML, textModel).Convert();
-                        break;
-                    case TextForConverting.TextFormats.CSV:
-                        text.ConvertedText = TextConverterManager.GetTextConverter(ConverterTypes.TextToCSV, textModel).Convert();
-                        break;
-                    default:
-                        break;
-                }
-            }
-                        
+            text.ConvertedText = Helpers.TextConvertingHelper.GetConvertedText(text);
             return View(text);
         }
     }

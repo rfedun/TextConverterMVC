@@ -7,7 +7,7 @@ using TextConverter.Domain.Interfaces;
 
 namespace TextConverter.Domain.Entities
 {
-    public class TextModel
+    public class TextModel : ITextModel
     {
         private static char[] _sentenceSeparatorsList = new char[] { '.', '!', '?' };
         private List<Sentence> _sentenceList;

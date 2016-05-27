@@ -13,7 +13,7 @@ namespace TextConverter.Domain.Entities
 
     public class TextConverterManager
     {
-        public static ITextConverter GetTextConverter(ConverterTypes type, TextModel textModel)
+        public static ITextConverter GetTextConverter(ConverterTypes type, ITextModel textModel)
         {
             switch (type)
             {

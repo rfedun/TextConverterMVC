@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ITextModel.cs" />
     <Compile Include="Entities\TextConverters\CSVConverter.cs" />
     <Compile Include="Interfaces\ITextConverter.cs" />
     <Compile Include="Entities\Sentence.cs" />
