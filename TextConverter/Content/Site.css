@@ -5,10 +5,6 @@
     min-width:500px;
 }
 
-.caption {
-    font-size: 28px;   
-}
-
 .label {
     font-size: large;
     vertical-align:middle;
@@ -16,9 +12,29 @@
 
 textarea {
     width: 100%;
-    resize: none;  
+    resize: none;
     padding: 5px;  
-    border: 2px solid gray;
+    border: 0.1em solid #ccc;
+  	border-radius: 0.5em;
+    outline:none;   
+    background-color: rgb(233, 255, 255);
+    font-size:1.2em;
+}
+
+textarea:focus {
+    background-color: rgb(255, 255, 255);
+}
+
+textarea::-moz-placeholder {
+    font-size:1.5em;
+}
+
+textarea::-webkit-input-placeholder{
+    font-size:1.5em;
+}
+
+textarea:-ms-input-placeholder{
+    font-size:1.5em;
 }
 
 .input-text-control{
@@ -48,11 +64,13 @@ input[type=submit] {
 }
 
 .result-block{
-    border: 2px solid gray;
     width: 100%;    
     padding: 5px;
     min-height: 200px;
     background-color: rgb(233, 255, 255);
+    border: 0.1em solid #ccc;
+  	border-radius: 0.5em;
+    font-size:1.2em;
 }
 
 .result-block pre{

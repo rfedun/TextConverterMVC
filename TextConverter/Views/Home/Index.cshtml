@@ -14,11 +14,10 @@
 </head>
 <body>
     <div class="center">
-        <span class="caption">Enter text for converting</span>
         @using (Html.BeginForm())
         {
             <div class="input-text-control">
-                @Html.TextAreaFor(x => x.InputText, new { @class = "input-text-area", rows = "15" })
+                @Html.TextAreaFor(x => x.InputText, new { @class = "input-text-area", placeholder = "Enter text for converting...", rows = "15" })
             </div>
             <div class="submit-button-area">  
                 <span class="label">Choose format to convert:</span>              
