@@ -17,9 +17,9 @@ namespace TextConverter.Helpers
                 switch (convertingText.TextFormat)
                 {
                     case TextForConverting.TextFormats.XML:
-                        return TextConverterManager.GetTextConverter(ConverterTypes.TextToXML, textModel).Convert();
+                        return TextConverterFactory.GetTextConverter(ConverterTypes.TextToXML).Convert(textModel);
                     case TextForConverting.TextFormats.CSV:
-                        return TextConverterManager.GetTextConverter(ConverterTypes.TextToCSV, textModel).Convert();
+                        return TextConverterFactory.GetTextConverter(ConverterTypes.TextToCSV).Convert(textModel);
                     default:
                         break;
                 }

@@ -8,23 +8,17 @@ using TextConverter.Domain.Interfaces;
 namespace TextConverter.Domain.Entities
 {
     public class XMLConverter : ITextConverter
-    {
-        private ITextModel _textModel;
+    {        
         private string _textTag = "text";
         private string _sentenceTag = "sentence";
         private string _wordTag = "word";
 
-        public XMLConverter(ITextModel textModel)
-        {
-            _textModel = textModel;
-        }
-
-        public string Convert()
+        public string Convert(ITextModel textModel)
         {
             var sb = new StringBuilder();
             sb.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>");
             sb.AppendLine($"<{_textTag}>");
-            foreach (var sentence in _textModel.SentenceList)
+            foreach (var sentence in textModel.SentenceList)
             {
                 sb.AppendLine(ConvertSentenceToXML(sentence));
             }

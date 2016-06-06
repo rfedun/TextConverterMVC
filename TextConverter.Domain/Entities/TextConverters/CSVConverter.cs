@@ -9,29 +9,23 @@ namespace TextConverter.Domain.Entities
 {
     public class CSVConverter : ITextConverter
     {
-        private ITextModel _textModel;
         private string _sentenceName = "Sentence";
         private string _wordName = "Word";
 
-        public CSVConverter(ITextModel textModel)
+        public string Convert(ITextModel textModel)
         {
-            _textModel = textModel;
-        }
-
-        public string Convert()
-        {
-            if (_textModel.SentenceList.Count == 0)
+            if (textModel.SentenceList.Count == 0)
                 return string.Empty;
 
             var sb = new StringBuilder();
-            int maxWordCount = _textModel.SentenceList.Max(sentence => sentence.WordList.Count);
+            int maxWordCount = textModel.SentenceList.Max(sentence => sentence.WordList.Count);
             for (int i = 1; i <= maxWordCount; i++)
             {
                 sb.Append($", {_wordName} {i}");
             }
             sb.AppendLine();
             int rowNumber = 1;
-            foreach (var sentence in _textModel.SentenceList)
+            foreach (var sentence in textModel.SentenceList)
             {
                 sb.Append($"{_sentenceName} {rowNumber++}, ");
                 sb.AppendLine(ConvertSentenceToCSV(sentence));

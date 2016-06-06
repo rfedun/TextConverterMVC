@@ -9,6 +9,7 @@ function GetConvertedText() {
             $('#converted_text').text(data);
         }
     });
+    
 }
 
 $().ready(function () {    

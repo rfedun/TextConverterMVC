@@ -151,7 +151,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\TextConvertingHelper.cs" />
-    <Compile Include="Models\Text.cs" />
+    <Compile Include="Models\TextForConverting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -11,18 +11,18 @@ namespace TextConverter.Domain.Entities
 {
     public enum ConverterTypes { TextToXML, TextToCSV }
 
-    public class TextConverterManager
+    public class TextConverterFactory
     {
-        public static ITextConverter GetTextConverter(ConverterTypes type, ITextModel textModel)
+        public static ITextConverter GetTextConverter(ConverterTypes type)
         {
             switch (type)
             {
                 case ConverterTypes.TextToXML:
-                    return new XMLConverter(textModel);
+                    return new XMLConverter();
                 case ConverterTypes.TextToCSV:
-                    return new CSVConverter(textModel);
+                    return new CSVConverter();
                 default:
-                    return new XMLConverter(textModel);
+                    return new XMLConverter();
             }
         }        
     }

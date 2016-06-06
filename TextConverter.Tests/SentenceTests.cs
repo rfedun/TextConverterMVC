@@ -23,5 +23,5 @@ namespace TextConverter.Tests
             //Assert
             Assert.AreEqual(8, sentence.WordList.Count);
         }        
-    }
+    }    
 }

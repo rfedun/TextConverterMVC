@@ -44,7 +44,7 @@
     <Compile Include="Entities\TextConverters\CSVConverter.cs" />
     <Compile Include="Interfaces\ITextConverter.cs" />
     <Compile Include="Entities\Sentence.cs" />
-    <Compile Include="Entities\TextConverterManager.cs" />
+    <Compile Include="Entities\TextConverterFactory.cs" />
     <Compile Include="Entities\TextModel.cs" />
     <Compile Include="Entities\Word.cs" />
     <Compile Include="Entities\TextConverters\XMLConverter.cs" />
